@@ -50,12 +50,19 @@ class App extends React.Component{
     this.setState({todos: newTodos})
   }
 
+  deleteTask = (id) =>{
+    console.log(id)
+    let newTodos = this.state.todos.filter(todo => todo.id !== id)
+    this.setState({todos: newTodos})
+  }
+
   render(){
     return (
       <div className="App">
-        Your Super Fancy To Do List
+        <h3>Your Super Fancy To Do List</h3>
         <AddTodo addTodo = {this.addTodo}/>
-        <TodosContainer todos = {this.state.todos} completeTask = {this.completeTask}/>
+        <br></br>
+        <TodosContainer todos = {this.state.todos} completeTask = {this.completeTask} deleteTask ={this.deleteTask}/>
       </div>
     );
   }
