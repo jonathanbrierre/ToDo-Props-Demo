@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class Todo extends Component {
 
     handleOnChange = (e) => {
-        console.log('hello')
         this.props.completeTask(this.props.todo.id)
     }
 

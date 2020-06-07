@@ -19,7 +19,7 @@ class AddTodo extends Component {
     render() {
         return (
             <form onSubmit = {this.handleOnSubmit}>
-                <input type = 'text' name = 'newTask' value = {this.state.newTask} onChange = {this.handleOnChange}/>
+                <input type = 'text' name = 'newTask' value = {this.state.newTask} onChange = {this.handleOnChange} placeholder = 'Create Task...'/>
                 <input type = 'submit'/>
             </form>
         )

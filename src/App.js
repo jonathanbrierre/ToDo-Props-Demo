@@ -51,7 +51,6 @@ class App extends React.Component{
   }
 
   deleteTask = (id) =>{
-    console.log(id)
     let newTodos = this.state.todos.filter(todo => todo.id !== id)
     this.setState({todos: newTodos})
   }
