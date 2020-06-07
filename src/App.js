@@ -37,8 +37,17 @@ class App extends React.Component{
     ]})
   }
 
-  completeTask = () => {
-
+  completeTask = (id) => {
+    let newTodos = [...this.state.todos].map(todo => {
+      if(todo.id === id){
+        return {
+          ...todo,
+          completed: !todo.completed
+        }
+      }
+      return todo
+    })
+    this.setState({todos: newTodos})
   }
 
   render(){
@@ -46,7 +55,7 @@ class App extends React.Component{
       <div className="App">
         Your Super Fancy To Do List
         <AddTodo addTodo = {this.addTodo}/>
-        <TodosContainer todos = {this.state.todos}/>
+        <TodosContainer todos = {this.state.todos} completeTask = {this.completeTask}/>
       </div>
     );
   }

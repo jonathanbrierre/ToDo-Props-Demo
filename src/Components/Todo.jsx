@@ -4,6 +4,7 @@ class Todo extends Component {
 
     handleOnChange = (e) => {
         console.log('hello')
+        this.props.completeTask(this.props.todo.id)
     }
     render() {
         return (
