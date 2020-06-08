@@ -38,7 +38,7 @@ class App extends React.Component{
   }
 
   completeTask = (id) => {
-    let newTodos = [...this.state.todos].map(todo => {
+    let newTodos = this.state.todos.map(todo => {
       if(todo.id === id){
         return {
           ...todo,
@@ -50,7 +50,7 @@ class App extends React.Component{
     this.setState({todos: newTodos})
   }
 
-  deleteTask = (id) =>{
+  deleteTask = (id) => {
     let newTodos = this.state.todos.filter(todo => todo.id !== id)
     this.setState({todos: newTodos})
   }

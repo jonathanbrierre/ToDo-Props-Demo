@@ -9,6 +9,7 @@ class Todo extends Component {
     handleOnClick = () => {
         this.props.deleteTask(this.props.todo.id)
     }
+    
     render() {
         return (
             <div>
